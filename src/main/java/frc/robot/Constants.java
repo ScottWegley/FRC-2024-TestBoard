@@ -32,7 +32,7 @@ public class Constants {
         //claw 
         public static final int kClawSolenoidPort = 0;
         public static final double kClawIntakeSpeed = 0.5;
-        
+        public static final int kIntakeMotorPort = 7;
     }
 
     //Checked and verified as of May 1st, 2022

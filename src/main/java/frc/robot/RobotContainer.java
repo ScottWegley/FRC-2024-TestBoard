@@ -22,9 +22,9 @@ import edu.wpi.first.wpilibj2.command.WaitCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import frc.robot.Constants.ArmConstants;
-import frc.robot.Constants.AutoConstants;
-import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
+import frc.robot.commands.EjectPiece;
+import frc.robot.commands.IntakePiece;
 import frc.robot.commands.RunSetClaw;
 import frc.robot.commands.RunSetFlexAngle;
 import frc.robot.commands.RunSetRotateAngle;
@@ -47,7 +47,8 @@ public class RobotContainer {
     private final Joystick primaryJoystick = new Joystick(OIConstants.kPrimaryJoystickID);
 
     // Secondary controller buttons
-    private final JoystickButton secondaryJoystickAButton = new JoystickButton(primaryJoystick, 1); // Square Button
+    private final JoystickButton primaryJoystickAButton = new JoystickButton(primaryJoystick, 1); // Square Button
+    private final JoystickButton primaryJoystickBButton = new JoystickButton(primaryJoystick, 2);
 
     public RobotContainer() {
 
@@ -59,7 +60,10 @@ public class RobotContainer {
 
     private void configButtonBindings() {
         // claw
-        secondaryJoystickAButton.onTrue();
+        primaryJoystickAButton.onTrue(new IntakePiece(claw));
+        primaryJoystickBButton.onTrue(new EjectPiece(claw));
+
+
 
     }
 

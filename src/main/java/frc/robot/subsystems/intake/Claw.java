@@ -23,7 +23,7 @@ public class Claw extends SubsystemBase {
         solenoid = new DoubleSolenoid(ArmConstants.kClawSolenoidPort, PneumaticsModuleType.CTREPCM, 1, 0);
         close();
         // rotate motor
-        intakeMotor = new CANSparkMax(ArmConstants.kRotateMotorPort, MotorType.kBrushless);
+        intakeMotor = new CANSparkMax(ArmConstants.kIntakeMotorPort, MotorType.kBrushless);
         intakeMotor.restoreFactoryDefaults();
         intakeMotor.setIdleMode(IdleMode.kCoast);
 
