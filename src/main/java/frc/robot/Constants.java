@@ -17,22 +17,9 @@ public class Constants {
     public static final double neoMaxRPM = 5000; //5000 was experimentally determined from our swerve chassis    
     public static final class ArmConstants {
 
-        //flex
-        public static final double kFlexLowerBound = -300;
-        public static final double kFlexUpperBound = 300;
-
-        public static final double kPFlex = 0.05;
-        public static final double kIFlex = 0.0;
-        public static final double kDFlex = 0.0;
-        public static final double kIZoneFlex = 0.0;
-        public static final double kFFFlex = 0.0;
-
-        public static final int kFlexMotorPort = 8;
-
         //claw 
-        public static final int kClawSolenoidPort = 0;
-        public static final double kClawIntakeSpeed = 0.5;
-        public static final int kIntakeMotorPort = 7;
+        public static final double kClawIntakeSpeed = 0.25;
+        public static final int kIntakeMotorPort = 13;
     }
 
     //Checked and verified as of May 1st, 2022
@@ -45,8 +32,5 @@ public class Constants {
         public static final int kPrimaryJoystickRightXAxisID = 4;
         public static final int kPrimaryJoystickRightYAxisID = 5;
 
-        public static final double kDriverExp = 7.0 / 3; //Exponentiate the joystick values to have finer control at low values
-
-        public static final double kDeadband = 0.01; 
     }
 }
