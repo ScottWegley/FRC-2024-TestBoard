@@ -6,15 +6,13 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.OIConstants;
 import frc.robot.commands.EjectPiece;
 import frc.robot.commands.IntakePiece;
+import frc.robot.commands.StopIntake;
 import frc.robot.subsystems.intake.Claw;
 
 public class RobotContainer {
     // Subsystems
     private final Claw claw = new Claw();
 
-    // Event map for button binding and autos
-
-    // Choosers
 
     // Controllers
     private final Joystick primaryJoystick = new Joystick(OIConstants.kPrimaryJoystickID);
@@ -32,16 +30,7 @@ public class RobotContainer {
 
     private void configButtonBindings() {
         // claw
-        primaryJoystickAButton.onTrue(new IntakePiece(claw));
-        primaryJoystickBButton.onTrue(new EjectPiece(claw));
-
-
-
-    }
-
-    public void updateSmartDashboard() {
-
-        // claw
-        SmartDashboard.putString("Claw State", claw.isOpen() ? "Open" : "Close");
+        primaryJoystickAButton.whileTrue(new IntakePiece(claw));
+        primaryJoystickBButton.whileTrue(new EjectPiece(claw));
     }
 }
